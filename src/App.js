@@ -3,11 +3,11 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      <footer className="App-footer">
         <p>
           <a
             className="App-link"
-            href="https://reactjs.org"
+            href="https://github.com/solomiiasabat/react-dictionary-app"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -15,7 +15,7 @@ function App() {
           </a>{" "}
           by Solomiia Sabat
         </p>
-      </header>
+      </footer>
     </div>
   );
 }
