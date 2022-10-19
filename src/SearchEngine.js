@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Results from "./Results";
 
 export default function SearchEngine() {
   let [keyword, setKeyword] = useState("");
+  let [results, setResults] = useState(null);
 
   function search(event) {
     event.preventDefault();
@@ -11,6 +13,7 @@ export default function SearchEngine() {
   }
 
   function handleResponse(response) {
+    setResults(response.data[0]);
     console.log(response.data[0]);
   }
 
@@ -28,6 +31,7 @@ export default function SearchEngine() {
           onChange={handleChange}
         ></input>
       </form>
+      <Results results={results} />
     </div>
   );
 }
