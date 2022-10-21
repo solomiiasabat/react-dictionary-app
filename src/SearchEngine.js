@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Results from "./Results";
+import "./SearchEngine.css";
 
 export default function SearchEngine() {
   let [keyword, setKeyword] = useState("");
@@ -23,14 +24,16 @@ export default function SearchEngine() {
 
   return (
     <div className="SearchEngine">
-      <form className="pt-3" onSubmit={search}>
-        <input
-          type="search"
-          placeholder=" Search here"
-          autoFocus
-          onChange={handleChange}
-        ></input>
-      </form>
+      <section>
+        <form className="pt-3" onSubmit={search}>
+          <input
+            type="search"
+            placeholder="Search here"
+            onChange={handleChange}
+          ></input>
+          <div className="hint-examples">i.e. moon, eat, yoga...</div>
+        </form>
+      </section>
       <Results results={results} />
     </div>
   );

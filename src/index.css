@@ -1,12 +1,43 @@
+:root {
+  --main-color: #ffe7cd;
+}
+
 body {
   margin: 0;
   font-family: "Mali", cursive;
   font-family: "Montserrat", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: var(--main-color);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 5px;
+}
+
+.definition {
+  font-size: 14px;
+}
+
+.example {
+  font-style: italic;
+  opacity: 0.8;
+}
+
+.synonyms {
+  list-style-type: disc;
+  padding-left: 30px;
+  font-size: 12px;
+}
+
+.try {
+  font-size: 13px;
+  font-weight: bold;
+  padding-left: 5px;
 }
