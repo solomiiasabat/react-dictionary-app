@@ -13,7 +13,11 @@ export default function Results(props) {
         <section>
           <h2>{props.results.word}</h2>
           <h4 className="phonetic">
-            <a href={props.results.phonetics[0].audio}>
+            <a
+              href={props.results.phonetics[0].audio}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FontAwesomeIcon icon={faVolumeHigh} />
             </a>{" "}
             <bold>{props.results.phonetics[0].text}</bold>
