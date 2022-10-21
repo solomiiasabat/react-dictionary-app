@@ -2,14 +2,21 @@ import React from "react";
 import Meanings from "./Meanings";
 import "./Results.css";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faVolumeHigh } from "@fortawesome/free-solid-svg-icons";
+
 export default function Results(props) {
   if (props.results) {
+    console.log(props.results);
     return (
       <div className="Results">
         <section>
           <h2>{props.results.word}</h2>
           <h4 className="phonetic">
-            <bold>{props.results.phonetic}</bold>
+            <a href={props.results.phonetics[0].audio}>
+              <FontAwesomeIcon icon={faVolumeHigh} />
+            </a>{" "}
+            <bold>{props.results.phonetics[0].text}</bold>
           </h4>
         </section>
 
