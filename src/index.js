@@ -4,13 +4,16 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import SearchEngine from "./SearchEngine";
+import ErrorBoundary from "./ErrorBoundary";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <div className="container">
-      <SearchEngine />
-      <App />
+      <ErrorBoundary>
+        <SearchEngine />
+        <App />
+      </ErrorBoundary>
     </div>
   </React.StrictMode>
 );

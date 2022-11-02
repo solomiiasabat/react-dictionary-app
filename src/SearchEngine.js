@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import axios from "axios";
+import axios, { AxiosError, HttpStatusCode } from "axios";
 import Results from "./Results";
 import "./SearchEngine.css";
 
@@ -34,7 +34,7 @@ export default function SearchEngine() {
           <div className="hint-examples">i.e. moon, eat, yoga...</div>
         </form>
       </section>
-      <Results results={results} />
+      <Results results={results} keyword={keyword} />
     </div>
   );
 }

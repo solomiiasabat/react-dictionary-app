@@ -7,20 +7,27 @@ import { faVolumeHigh } from "@fortawesome/free-solid-svg-icons";
 
 export default function Results(props) {
   if (props.results) {
+    const phonetic =
+      props.results.phonetics.filter((phonetic) => phonetic.audio != "")[0] ??
+      null;
     console.log(props.results);
     return (
       <div className="Results">
         <section>
           <h2>{props.results.word}</h2>
           <h4 className="phonetic">
-            <a
-              href={props.results.phonetics[0].audio}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FontAwesomeIcon icon={faVolumeHigh} />
-            </a>{" "}
-            <bold>{props.results.phonetics[0].text}</bold>
+            {phonetic && (
+              <>
+                <a
+                  href={phonetic.audio}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FontAwesomeIcon icon={faVolumeHigh} />
+                </a>{" "}
+                <strong>{phonetic.text}</strong>
+              </>
+            )}
           </h4>
         </section>
 
