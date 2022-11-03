@@ -3,3 +3,16 @@
   margin-bottom: 20px;
   border-radius: 5px;
 }
+
+section.Photos {
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+@media (max-width: 800px) {
+  .Photos img {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-right: 0px;
+  }
+}
