@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Results from "./Results";
+import Word from "./Word";
 import "./SearchEngine.css";
 import Photos from "./Photos";
 
@@ -16,7 +17,7 @@ export default function SearchEngine() {
 
     const apiPexelsKey =
       "563492ad6f917000010000017ddba45ac07c4923ade329071eb1bc2f";
-    let pexelsApiUrl = `https://api.pexels.com/v1/search?query=${keyword}&per_page=9`;
+    let pexelsApiUrl = `https://api.pexels.com/v1/search?query=${keyword}&per_page=3`;
 
     let headers = { Authorization: `Bearer ${apiPexelsKey}` };
     axios.get(pexelsApiUrl, { headers: headers }).then(handlePexelsResponse);
@@ -48,8 +49,9 @@ export default function SearchEngine() {
           <div className="hint-examples">i.e. moon, eat, yoga...</div>
         </form>
       </section>
-      <Results results={results} keyword={keyword} />
+      <Word results={results} keyword={keyword} />
       <Photos photos={photos} />
+      <Results results={results} keyword={keyword} />
     </div>
   );
 }
