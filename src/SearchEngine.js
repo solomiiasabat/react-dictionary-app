@@ -57,7 +57,7 @@ export default function SearchEngine() {
         </form>
       </section>
       <Word results={results} keyword={keyword} />
-      <Photos photos={photos} />
+      {error ? null : <Photos photos={photos} />}
       {error ? (
         <p>Word not found</p>
       ) : (
