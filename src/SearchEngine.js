@@ -36,7 +36,6 @@ export default function SearchEngine() {
   }
 
   function handlePexelsResponse(response) {
-    console.log(response);
     setPhotos(response.data.photos);
   }
 
@@ -56,7 +55,7 @@ export default function SearchEngine() {
           <div className="hint-examples">i.e. moon, eat, yoga...</div>
         </form>
       </section>
-      <Word results={results} keyword={keyword} />
+      {error ? null : <Word results={results} keyword={keyword} />}
       {error ? null : <Photos photos={photos} />}
       {error ? (
         <p>Word not found</p>
