@@ -9,18 +9,25 @@ export default function SearchEngine() {
   let [keyword, setKeyword] = useState("");
   let [results, setResults] = useState(null);
   let [photos, setPhotos] = useState("");
+  const [error, setError] = useState(false);
 
   function search(event) {
     event.preventDefault();
     let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${keyword}`;
-    axios.get(apiUrl).then(handleResponse);
+    axios
+      .get(apiUrl)
+      .then(handleResponse)
+      .catch(() => setError(true));
 
     const apiPexelsKey =
       "563492ad6f917000010000017ddba45ac07c4923ade329071eb1bc2f";
     let pexelsApiUrl = `https://api.pexels.com/v1/search?query=${keyword}&per_page=4`;
 
     let headers = { Authorization: `Bearer ${apiPexelsKey}` };
-    axios.get(pexelsApiUrl, { headers: headers }).then(handlePexelsResponse);
+    axios
+      .get(pexelsApiUrl, { headers: headers })
+      .then(handlePexelsResponse)
+      .catch(() => setError(true));
   }
 
   function handleResponse(response) {
@@ -51,7 +58,11 @@ export default function SearchEngine() {
       </section>
       <Word results={results} keyword={keyword} />
       <Photos photos={photos} />
-      <Results results={results} keyword={keyword} />
+      {error ? (
+        <p>Word not found</p>
+      ) : (
+        <Results results={results} keyword={keyword} />
+      )}
     </div>
   );
 }
