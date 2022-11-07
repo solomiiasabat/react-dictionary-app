@@ -24,10 +24,7 @@ export default function SearchEngine() {
     let pexelsApiUrl = `https://api.pexels.com/v1/search?query=${keyword}&per_page=4`;
 
     let headers = { Authorization: `Bearer ${apiPexelsKey}` };
-    axios
-      .get(pexelsApiUrl, { headers: headers })
-      .then(handlePexelsResponse)
-      .catch(() => setError(true));
+    axios.get(pexelsApiUrl, { headers: headers }).then(handlePexelsResponse);
   }
 
   function handleResponse(response) {
@@ -55,13 +52,20 @@ export default function SearchEngine() {
           <div className="hint-examples">i.e. moon, eat, yoga...</div>
         </form>
       </section>
-      {error ? null : <Word results={results} keyword={keyword} />}
-      {error ? null : <Photos photos={photos} />}
       {error ? (
-        <p>Word not found</p>
+        <section>
+          <p className="error">
+            Word not found.
+            <div>
+              Please, <span className="please-reload">reload this page</span>
+            </div>
+          </p>
+        </section>
       ) : (
-        <Results results={results} keyword={keyword} />
+        <Word results={results} keyword={keyword} />
       )}
+      {error ? null : <Photos photos={photos} />}
+      {error ? null : <Results results={results} keyword={keyword} />}
     </div>
   );
 }
