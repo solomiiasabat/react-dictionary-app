@@ -54,12 +54,12 @@ export default function SearchEngine() {
       </section>
       {error ? (
         <section>
-          <p className="error">
+          <div className="error">
             Word not found.
-            <div>
+            <p>
               Please, <span className="please-reload">reload this page</span>
-            </div>
-          </p>
+            </p>
+          </div>
         </section>
       ) : (
         <Word results={results} keyword={keyword} />
