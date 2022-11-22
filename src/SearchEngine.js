@@ -32,7 +32,6 @@ export default function SearchEngine() {
 
   function handleResponse(response) {
     setResults(response.data[0]);
-    console.log(response.data[0]);
   }
 
   function handlePexelsResponse(response) {
