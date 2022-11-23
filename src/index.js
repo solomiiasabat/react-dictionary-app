@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import App from "./App";
-import SearchEngine from "./SearchEngine";
+import Footer from "./components/Footer/Footer";
+import SearchEngine from "./components/SearchEngine/SearchEngine";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -10,7 +10,7 @@ root.render(
     <div className="container">
       <SearchEngine />
 
-      <App />
+      <Footer />
     </div>
   </React.StrictMode>
 );

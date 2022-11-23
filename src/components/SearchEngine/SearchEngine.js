@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import axios from "axios";
-import Results from "./Results";
-import Word from "./Word";
+import Results from "../Results/Results";
+import Word from "../Word";
 import "./SearchEngine.css";
-import Photos from "./Photos";
+import Photos from "../Photos/Photos";
 
 export default function SearchEngine() {
-  let [keyword, setKeyword] = useState("");
-  let [results, setResults] = useState(null);
-  let [photos, setPhotos] = useState("");
+  const [keyword, setKeyword] = useState("");
+  const [results, setResults] = useState(null);
+  const [photos, setPhotos] = useState("");
   const [error, setError] = useState(false);
 
   function search(event) {
