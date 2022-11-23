@@ -3,8 +3,8 @@ import Meanings from "../Meanings/Meanings";
 import "./Results.css";
 
 export default function Results(props) {
-  if (props.results) {
-    return (
+  return (
+    props.results && (
       <div className="Results">
         {props.results.meanings.map(function (meanings, index) {
           return (
@@ -14,8 +14,6 @@ export default function Results(props) {
           );
         })}
       </div>
-    );
-  } else {
-    return null;
-  }
+    )
+  );
 }

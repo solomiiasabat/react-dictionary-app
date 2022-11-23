@@ -5,9 +5,11 @@ import { faVolumeHigh } from "@fortawesome/free-solid-svg-icons";
 
 export default function Word(props) {
   if (props.results) {
-    const phonetic =
-      props.results.phonetics.filter((phonetic) => phonetic.audio !== "")[0] ??
-      null;
+    const phoneticsWithAudio = props.results.phonetics.filter(
+      (phonetic) => phonetic.audio !== ""
+    );
+    const phonetic = phoneticsWithAudio[0] ?? null;
+
     return (
       <div className="Results">
         <section>

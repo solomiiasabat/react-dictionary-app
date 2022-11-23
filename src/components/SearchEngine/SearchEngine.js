@@ -54,8 +54,8 @@ export default function SearchEngine() {
           <div className="hint-examples">i.e. moon, eat, yoga...</div>
         </form>
       </section>
-      {error ? null : <Word results={results} keyword={keyword} />}
-      {error ? null : <Photos photos={photos} />}
+      {!error && <Word results={results} keyword={keyword} />}
+      {!error && <Photos photos={photos} />}
       {error ? (
         <section>
           <div className="error">
