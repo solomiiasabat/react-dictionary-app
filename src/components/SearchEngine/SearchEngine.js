@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
-import Results from "../Results/Results";
-import Word from "../Word";
+import Results from "./components/Results/Results";
+import Word from "./components/Word";
 import "./SearchEngine.css";
-import Photos from "../Photos/Photos";
-import Constants from "../Constants";
+import Photos from "./components/Photos/Photos";
+import { apiPexelsKey } from "./Constants";
 
 export default function SearchEngine() {
   const [keyword, setKeyword] = useState("");
@@ -20,8 +20,6 @@ export default function SearchEngine() {
       .then(handleResponse)
       .catch(() => setError(true));
 
-    const apiPexelsKey =
-      "563492ad6f917000010000017ddba45ac07c4923ade329071eb1bc2f";
     const pexelsApiUrl = `https://api.pexels.com/v1/search?query=${keyword}&per_page=4`;
 
     let headers = { Authorization: `Bearer ${apiPexelsKey}` };
