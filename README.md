@@ -8,10 +8,12 @@
 
 ## 💻 How to run this app?
 
+Create a new folder "my-project".
+
 Clone the project
 
 ```bash
-  git clone https://github.com/solomiiasabat/react-dictionary-app
+  git clone https://github.com/solomiiasabat/react-dictionary-app.git
 ```
 
 Go to the project directory
