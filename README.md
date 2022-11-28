@@ -34,6 +34,6 @@ Start the server
 
 ## ❓How this app works
 
-📍 Type your word in a search engine.
-📍 Dictionary is not case-sensitive. Uppercase and lowercase letters mean the same here.
-📍 If the dictionary doesn't contain your word, you will see an error message. To continue work with the dictionary — RELOAD the page.
+- Type your word in a search engine.
+- Dictionary is not case-sensitive. Uppercase and lowercase letters mean the same here.
+- If the dictionary doesn't contain your word, you will see an error message. To continue work with the dictionary — RELOAD the page.
