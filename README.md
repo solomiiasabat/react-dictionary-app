@@ -2,9 +2,9 @@
 
 ## 📖 Project description
 
-This project was built in React's programming workshop "SheCodes React." \
-This monolingual English dictionary provides definitions, phonetic audio, synonyms, and images. \
-The dictionary uses two separate APIs — one for words and one for images.
+📍 This project was built in React's programming workshop "SheCodes React." \
+📍 This monolingual English dictionary provides definitions, phonetic audio, synonyms, and images. \
+📍 The dictionary uses two separate APIs — one for words and one for images.
 
 ## 💻 How to run this app?
 
