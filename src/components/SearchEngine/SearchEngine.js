@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import axios from "axios";
 import Results from "./components/Results/Results";
 import Word from "./components/Word";
 import "./SearchEngine.css";
 import Photos from "./components/Photos/Photos";
-import { apiPexelsKey } from "./Constants";
+import { SearchWord, SearchPictures } from "./components/utils";
 
 export default function SearchEngine() {
   const [keyword, setKeyword] = useState("");
@@ -14,27 +13,8 @@ export default function SearchEngine() {
 
   function search(event) {
     event.preventDefault();
-    const apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${keyword}`;
-    axios
-      .get(apiUrl)
-      .then(handleResponse)
-      .catch(() => setError(true));
-
-    const pexelsApiUrl = `https://api.pexels.com/v1/search?query=${keyword}&per_page=4`;
-
-    let headers = { Authorization: `Bearer ${apiPexelsKey}` };
-    axios
-      .get(pexelsApiUrl, { headers: headers })
-      .then(handlePexelsResponse)
-      .catch(() => setError(true));
-  }
-
-  function handleResponse(response) {
-    setResults(response.data[0]);
-  }
-
-  function handlePexelsResponse(response) {
-    setPhotos(response.data.photos);
+    SearchWord(keyword, setResults, setError);
+    SearchPictures(keyword, setPhotos, setError);
   }
 
   function handleChange(event) {

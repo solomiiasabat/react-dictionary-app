@@ -11,8 +11,7 @@
 Create a new folder "my-project".
 
 ```bash
-  npm install my-project
-  cd my-project
+ mkdir my-project
 ```
 
 Clone the project
