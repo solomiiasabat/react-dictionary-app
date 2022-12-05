@@ -3,7 +3,7 @@ import Results from "./components/Results/Results";
 import Word from "./components/Word";
 import "./SearchEngine.css";
 import Photos from "./components/Photos/Photos";
-import { SearchWord, SearchPictures } from "./components/utils";
+import { searchWord, searchPictures } from "./utils";
 
 export default function SearchEngine() {
   const [keyword, setKeyword] = useState("");
@@ -13,8 +13,8 @@ export default function SearchEngine() {
 
   function search(event) {
     event.preventDefault();
-    SearchWord(keyword, setResults, setError);
-    SearchPictures(keyword, setPhotos, setError);
+    searchWord(keyword, setResults, setError);
+    searchPictures(keyword, setPhotos, setError);
   }
 
   function handleChange(event) {

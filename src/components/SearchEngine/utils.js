@@ -1,7 +1,7 @@
 import axios from "axios";
-import { apiPexelsKey } from "../Constants";
+import { apiPexelsKey } from "./constants";
 
-export function SearchWord(keyword, onSuccess, onError) {
+export function searchWord(keyword, onSuccess, onError) {
   const apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${keyword}`;
   axios
     .get(apiUrl)
@@ -9,7 +9,7 @@ export function SearchWord(keyword, onSuccess, onError) {
     .catch(() => onError(true));
 }
 
-export function SearchPictures(keyword, onSuccess, onError) {
+export function searchPictures(keyword, onSuccess, onError) {
   const pexelsApiUrl = `https://api.pexels.com/v1/search?query=${keyword}&per_page=4`;
   let headers = { Authorization: `Bearer ${apiPexelsKey}` };
   axios
