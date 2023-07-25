@@ -1,5 +1,5 @@
 import axios from "axios";
-import { apiKey } from "./constants";
+import { apiPexelsKey } from "./constants";
 
 export function searchWord(keyword, onSuccess, onError) {
   const apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${keyword}`;
@@ -10,8 +10,8 @@ export function searchWord(keyword, onSuccess, onError) {
 }
 
 export function searchPictures(keyword, onSuccess, onError) {
-  const pexelsApiUrl = `https://api.shecodes.io/images/v1/search?query=${keyword}&key=${apiKey}&per_page=4`;
-  let headers = { Authorization: `Bearer ${apiKey}` };
+  const pexelsApiUrl = `https://api.shecodes.io/images/v1/search?query=${keyword}&key=${apiPexelsKey}&per_page=4`;
+  let headers = { Authorization: `Bearer ${apiPexelsKey}` };
   axios
     .get(pexelsApiUrl, { headers: headers })
     .then((response) => onSuccess(response.data.photos))
